@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>ขายหมากไม้</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-item-sliding *ngFor="let item ; let i = index of Items">
+    <ion-item>
+      <h2>{{item.name}}</h2> <h2>{{item.price}}</h2>
+      <ion-checkbox color="dark" (ionChange)="onChangeitem(i)" ></ion-checkbox>
+    </ion-item>  
+  </ion-item-sliding>
+  
+  <ion-button (click)="buy()">
+    Buy
+  </ion-button>
+
+  <h2>{{allprive}}</h2>
+
+</ion-content>

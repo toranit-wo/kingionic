@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>socialcardp1</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card *ngFor='let item ; let i = index of storylist'>
+    <ion-item>
+      <ion-avatar slot="start">
+        <img src="../../assets/user.jpg">
+      </ion-avatar>
+      <ion-label>
+        <h3>John Doe</h3>
+        <p>Dec 10, 2019</p>
+      </ion-label>
+    </ion-item>
+    
+    <!--  -->
+    <button calss="item item-image button button-full"><img src="{{item.storypic}}" class="img-responsive" alt="ion"></button>
+    <ion-card-header>
+      <ion-card-title>{{item.title}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+        {{item.content}}
+    </ion-card-content>
+  
+    <ion-footer>
+      <ion-row>
+        <ion-col class="ion-text-center">
+          <button (click)="addlike( i )">
+            <ion-icon name="thumbs-up"></ion-icon>
+            <div>{{item.likevalue}}</div>
+          </button>
+        </ion-col>
+        <ion-col class="ion-text-center">
+          <button (click)="showPrompt( i )">
+            <ion-icon name="text"></ion-icon>
+            <div>3 Comments</div>
+          </button>
+        </ion-col>
+        <ion-col class="ion-text-center">
+          <button>
+            <ion-icon name="time"></ion-icon>
+            <div>11h ago</div>
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-footer>
+
+  </ion-card>
+  
+</ion-content>
